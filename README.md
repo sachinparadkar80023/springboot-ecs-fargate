@@ -333,7 +333,7 @@ aws ecs describe-services \
 ## Further Reading
 
 - [AWS ECS Best Practices](https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/intro.html)
-- [Spring Boot on AWS](https://spring.io/guides/gs/spring-boot-for-azure/)
+- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Terraform ECS Module](https://registry.terraform.io/modules/terraform-aws-modules/ecs/aws/latest)
 
 ## License

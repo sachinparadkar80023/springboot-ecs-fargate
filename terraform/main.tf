@@ -19,9 +19,13 @@ variable "aws_region" {
 }
 
 variable "app_name" {
-  description = "Application name"
+  description = "Application name (max 20 characters for ALB/TG naming)"
   type        = string
   default     = "springboot-ecs-fargate"
+  validation {
+    condition     = length(var.app_name) <= 20
+    error_message = "Application name must be 20 characters or less to avoid ALB/TG name truncation."
+  }
 }
 
 variable "environment" {
