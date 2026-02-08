@@ -73,8 +73,21 @@ curl http://localhost:8080/api/info
 
 ### Build Docker Image
 
+The default Dockerfile expects a pre-built JAR file for simplicity and to avoid network/certificate issues during Docker build:
+
 ```bash
+# Build the JAR first
+mvn clean package -DskipTests
+
+# Build Docker image
 docker build -t springboot-ecs-fargate .
+```
+
+For production CI/CD pipelines with proper Maven repository access, use the multi-stage Dockerfile:
+
+```bash
+# Build using multi-stage Dockerfile (builds JAR inside Docker)
+docker build -f Dockerfile.multistage -t springboot-ecs-fargate .
 ```
 
 ### Run Docker Container
